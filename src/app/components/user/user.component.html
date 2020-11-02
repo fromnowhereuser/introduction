@@ -1,0 +1,4 @@
+<div class="user" [ngClass]="{'is-admin':user.isAdmin}">
+    {{user.email}} / {{user.organisation}}
+    <button (click)="user.toggleAdmin()">admin</button>
+</div>

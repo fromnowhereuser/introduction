@@ -15,10 +15,8 @@
 </div>
 
 <ul>
-    <li *ngFor="let user of users; let index = index; let isFirst = first; let isOdd=odd" class="user"
-        [ngClass]="{'is-admin':user.isAdmin}">
-        {{user.email}} / {{user.organisation}}
-        <button (click)="user.toggleAdmin()">admin</button>
+    <li *ngFor="let user of users; let index = index; let isFirst = first; let isOdd=odd">
+        <app-user [user]="user"></app-user>
     </li>
 </ul>
 
