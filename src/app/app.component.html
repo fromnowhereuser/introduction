@@ -16,8 +16,10 @@
 
 <ul>
     <li *ngFor="let user of users; let index = index; let isFirst = first; let isOdd=odd">
-        <app-user [user]="user"></app-user>
+        <app-user (userselect)="selectedUser = $event" [user]="user"></app-user>
     </li>
 </ul>
 
-<div [color]="'yellow'" style="font-size: 20px;" [size]="2" appDoNothing appZoom>nothing to show</div>
+<pre>{{selectedUser | json}}</pre>
+
+<!-- <div [color]="'yellow'" style="font-size: 20px;" [size]="2" appDoNothing appZoom>nothing to show</div> -->

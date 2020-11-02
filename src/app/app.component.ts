@@ -16,7 +16,7 @@ export class AppComponent {
   public imagepath = 'https://media-exp1.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0?e=1612396800&v=beta&t=S9-bYCNGo75A5Q2Q3qzId2H5l4Vt7t-FuJJT1rzOtwE';
   public hidden = false;
   public users = new Array<User>();
-
+  public selectedUser: User;
 
   constructor() {
     setTimeout(() => {
@@ -26,6 +26,8 @@ export class AppComponent {
       }
     }, 0);
     this.users.push(new User("john", "microsoft"))
+    this.users.push(new User("sarah", "apple"))
+    this.users.push(new User("kayzer", "amazon"))
   }
 
   public addUser(

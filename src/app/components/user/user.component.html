@@ -1,4 +1,5 @@
 <div class="user" [ngClass]="{'is-admin':user.isAdmin}">
     {{user.email}} / {{user.organisation}}
-    <button (click)="user.toggleAdmin()">admin</button>
+    <button (click)="user.toggleAdmin($event)">admin</button>
+    <button (click)="userselect.emit(user)">select</button>
 </div>
