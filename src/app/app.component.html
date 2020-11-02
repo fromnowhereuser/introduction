@@ -1,4 +1,4 @@
-<h1>{{title?.main}}</h1>
+<h1 [color]="'yellowgreen'" appDoNothing>{{title?.main}}</h1>
 <h2>{{title?.subtitle}}</h2>
 
 
@@ -7,8 +7,19 @@
 
 <button (click)="addUser($event, email.value, organisation.value)">add</button>
 
+
+<div [ngSwitch]="users.length">
+    <div *ngSwitchCase="0">no user yet</div>
+    <div *ngSwitchCase="1">only one user</div>
+    <div *ngSwitchDefault>cheers ! lot of users :)</div>
+</div>
+
 <ul>
-    <li *ngFor="let user of users; let index = index; let isFirst = first; let isOdd=odd">
+    <li *ngFor="let user of users; let index = index; let isFirst = first; let isOdd=odd" class="user"
+        [ngClass]="{'is-admin':user.isAdmin}">
         {{user.email}} / {{user.organisation}}
+        <button (click)="user.toggleAdmin()">admin</button>
     </li>
 </ul>
+
+<div [color]="'yellow'" style="font-size: 20px;" [size]="2" appDoNothing appZoom>nothing to show</div>
